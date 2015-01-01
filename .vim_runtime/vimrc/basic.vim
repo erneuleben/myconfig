@@ -73,6 +73,7 @@ endif
 "设置隐藏gvim的菜单和工具栏
 set guioptions-=m
 set guioptions-=T
+
 "去除左右两边的滚动条
 set go-=r
 set go-=L
@@ -267,7 +268,8 @@ autocmd BufReadPost *
 " Always show the status line
 set laststatus=2
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"状态行显示的内容 
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")} """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
@@ -325,3 +327,7 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+" dictionary -> ctrl-x ctrl-k 自动补全， 字典功能 ctrl-p/n, ctrl-y
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+set dictionary=/usr/share/dict/words
